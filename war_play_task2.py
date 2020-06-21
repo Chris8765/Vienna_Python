@@ -171,7 +171,7 @@ class WAR_Game():
         score += self.dealer.total
         dictionary_player_value.update({self.dealer: self.dealer.total})
 
-        print(dictionary_player_value)
+
 
 
         player_name_max_value = max(dictionary_player_value.items(), key = operator.itemgetter(1))[0]
@@ -183,8 +183,7 @@ class WAR_Game():
             if dictionary_player_value[i] == max_value:
                 counter += 1
                 self.active_players.append(i)
-        for player in self.active_players:
-            print("Aktywni: " + str(player))
+
 
 
         if counter == 1:
@@ -201,8 +200,9 @@ class WAR_Game():
 
 
                 for player in self.active_players:
+                    print("Players with top card: " + str(player))
                     player.clear()
-                    print("Aktywni gracze po wyczyszczeniu kart: " + str(player))
+
 
                 self.deck.deal(self.active_players)
                 for active_players in self.active_players:
@@ -210,7 +210,7 @@ class WAR_Game():
                     dictionary_player_value_second.update({active_players: active_players.total})
 
                 for player in self.active_players:
-                    print("Aktywni gracze po rozdaniu ponownie kart: " + str(player))
+                    print("Active players with new cards: " + str(player))
 
 
 
